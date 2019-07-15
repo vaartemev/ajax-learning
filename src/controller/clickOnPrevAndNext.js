@@ -7,8 +7,8 @@ const photo = new Photo();
 
 export function showPreviousAlbum(){
 	if(album.getId() > 1){
-		album.prevAlbum();
 		cleanAlbum();
+		album.prevAlbum();
 		photo.albumId = album.getId();
 		photo.getPhotos(this.albumId);
 	}
@@ -16,10 +16,9 @@ export function showPreviousAlbum(){
 
 export function showNextAlbum(){
 	if(album.getId() <= 100){
-		album.nextAlbum();
 		cleanAlbum();
+		album.nextAlbum();
 		photo.albumId = album.getId();
 		photo.getPhotos(this.albumId);
 	} 
 }
-
