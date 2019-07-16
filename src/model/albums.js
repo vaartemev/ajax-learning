@@ -13,7 +13,7 @@ class Album {
 			.then(({
 				title
 			}) => renderTitle(title))
-			.catch((error) => console.error(error));
+			.catch(console.error());
 	}
 
 	nextAlbum() {

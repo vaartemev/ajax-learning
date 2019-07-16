@@ -28,7 +28,7 @@ class Photo {
 					});
 				});
 			})
-			.catch((error) => console.error(error));
+			.catch(console.error());
 	}
 	getFullImage(id) {
 		fetch(`http://jsonplaceholder.typicode.com/photos?id=${id}`)
@@ -40,7 +40,7 @@ class Photo {
 					renderFullImage(url);
 				});
 			})
-			.catch((error) => console.error(error));
+			.catch(console.error());
 	}
 }
 
