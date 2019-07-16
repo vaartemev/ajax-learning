@@ -1,33 +1,35 @@
-import { renderTitle } from "../view/render";
+import {
+	renderTitle
+} from "../view/render";
 
 class Album {
 	constructor() {
 		this.id = 1;
 	}
-	
-	getAlbum(id = this.id){
+
+	getAlbum(id = this.id) {
 		fetch(`https://jsonplaceholder.typicode.com/albums/${id}`)
 			.then((res) => res.json())
-			.then((data) => {
-				renderTitle(data.title);
-			})
+			.then(({
+				title
+			}) => renderTitle(title))
 			.catch((error) => console.error(error));
 	}
-	
-	nextAlbum(){
+
+	nextAlbum() {
 		this.id += 1;
 		this.getAlbum(this.id);
 	}
 
-	prevAlbum(){
+	prevAlbum() {
 		this.id -= 1;
 		this.getAlbum(this.id);
 	}
 
-	getId(){
+	getId() {
 		return this.id;
 	}
-	
+
 }
 
 export default Album;
